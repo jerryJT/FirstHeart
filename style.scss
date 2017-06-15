@@ -1,0 +1,39 @@
+@import "http://webresource.english.c-ctrip.com/resaresenglish/ibu/ibucommon/stylesheets/global.6f46544a.css";
+
+$fontSize:12px !global;
+$color:#333;
+$default:0;
+$baseLineHeight:3 !default;
+$baseLineHeight:2;
+$borderDesc:left;
+$borderDesc:top !default;
+$linkColor:#333, #1171b7;
+$headings:(h1:24px,h2:20px,h3:16px);
+
+body{
+  $fontSize:124px;
+  font-size:$fontSize;
+  color:$color;
+  padding:$default;
+  margin:$default;
+  line-height:$baseLineHeight;
+  border-#{$borderDesc}:1px solid #ccc;
+}
+
+a{ color:nth($linkColor, 1);
+  &:hover{ color:nth($linkColor, 2); }
+}
+@each $header,$size in $headings{
+  #{$header}{
+    font-size:$size;
+  }
+}
+p{font-size:$fontSize;}
+div{
+  p{
+    font-size:$fontSize;
+  }
+  &:before{
+    content:'sass';
+  }
+}
